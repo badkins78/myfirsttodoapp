@@ -64,6 +64,6 @@ app.put('/updateTimes', (request, response)=>{
     .catch(error => console.error(error))
   })
 
-  app.listen(process.env.PORT || PORT , () => {
+  app.listen(process.env.PORT || PORT, () => {
     console.log(`server is running on port ${PORT}`)
   })
