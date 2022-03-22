@@ -2,19 +2,18 @@ const { time } = require('console')
 const express = require('express')
 const app = express()
 const MongoClient = require('mongodb').MongoClient
-const PORT = 8000
+const PORT = 5500
 
 
 let db,
-    dbConnectionStr=process.env.DB_STRING,
-    dbName = 'todo'
 
-MongoClient.connect(dbConnectionStr, {useUnifiedTopology: true})
+    dbName = 'myfirsttodoappp'
+
+MongoClient.connect('mongodb+srv://bill:a1s2d3@cluster0.wwpd7.mongodb.net/todoapp?retryWrites=true&w=majority', {useUnifiedTopology: true})
     .then(client => {
       console.log(`connected to ${dbName} Database`)
       db = client.db(dbName)
     })
-
 app.set('view engine', 'ejs')
 app.use(express.static('public'))
 app.use(express.urlencoded({extended: true}))
