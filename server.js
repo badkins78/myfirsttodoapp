@@ -9,7 +9,7 @@ let db,
     dbConnectionStr = process.env.DB_STRING,
     dbName = 'todoapp'
 
-MongoClient.connect('mongodb+srv://bill:a1s2d3@cluster0.wwpd7.mongodb.net/todoapp?retryWrites=true&w=majority', {useUnifiedTopology: true})
+MongoClient.connect(dbConnectionStr, {useUnifiedTopology: true})
     .then(client => {
       console.log(`connected to ${dbName} Database`)
       db = client.db(dbName)
@@ -64,6 +64,6 @@ app.put('/updateTimes', (request, response)=>{
     .catch(error => console.error(error))
   })
 
-  app.listen(process.env.PORT || PORT, () => {
+  app.listen(process.env.PORT || 5500, () => {
     console.log(`server is running on port ${PORT}`)
   })
