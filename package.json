@@ -2,7 +2,7 @@
   "name": "to-do-app",
   "version": "1.0.0",
   "description": "to do app",
-  "main": "index.js",
+  "main": "index.ejs",
   "scripts": {
     "start": "nodemon server.js"
   },
